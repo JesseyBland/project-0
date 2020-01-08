@@ -43,9 +43,10 @@ func main() {
 			break
 
 		}
+		//while loop that holds the ai logic
 		var y int = 0
 		for y < 1 {
-			// the ai is a random number generator that randomly places its O
+			// the ai is a random number generator that places its O on grid
 			var t int64
 			t = int64(time.Now().Second())
 			rand.Seed(t)
