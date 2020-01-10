@@ -5,6 +5,7 @@ import "fmt"
 func main() {
 
 	for win == false {
+
 		makeGrid()
 		xmove()
 		checkWin()
