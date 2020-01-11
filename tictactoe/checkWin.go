@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 func checkWin() {
 	switch {
 	// X Win Conditions
@@ -56,7 +54,7 @@ func checkWin() {
 		wonChat = "O Wins!"
 		win = true
 	case moves == 9:
-		fmt.Println(wonChat)
+		win = true
 	default:
 		win = false
 	}

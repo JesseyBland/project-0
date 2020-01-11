@@ -3,16 +3,32 @@ package main
 import "fmt"
 
 func main() {
+	if tp == true {
+		for win == false {
+			makeGrid()
+			xmove()
+			checkWin()
 
-	for win == false {
-
+			if !win {
+				makeGrid()
+				twomove()
+				checkWin()
+			}
+		}
 		makeGrid()
-		xmove()
-		checkWin()
-		omove()
-		checkWin()
+		fmt.Println(wonChat)
 
+	} else {
+		for win == false {
+
+			makeGrid()
+			xmove()
+			checkWin()
+			aiOmove()
+			checkWin()
+
+		}
+		makeGrid()
+		fmt.Println(wonChat)
 	}
-	makeGrid()
-	fmt.Println(wonChat)
 }
