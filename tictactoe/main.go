@@ -24,8 +24,10 @@ func main() {
 			makeGrid()
 			xmove()
 			checkWin()
-			aiOmove()
-			checkWin()
+			if !win {
+				aiOmove()
+				checkWin()
+			}
 
 		}
 		makeGrid()
