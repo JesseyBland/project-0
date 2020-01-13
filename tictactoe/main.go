@@ -1,27 +1,29 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
 	if tp == true {
 		for win == false {
-			makeGrid()
+			printCells()
 			xmove()
 			checkWin()
 
 			if !win {
-				makeGrid()
+				printCells()
 				twomove()
 				checkWin()
 			}
 		}
-		makeGrid()
+		printCells()
 		fmt.Println(wonChat)
 
 	} else {
 		for win == false {
 
-			makeGrid()
+			printCells()
 			xmove()
 			checkWin()
 			if !win {
@@ -30,7 +32,7 @@ func main() {
 			}
 
 		}
-		makeGrid()
+		printCells()
 		fmt.Println(wonChat)
 	}
 }
