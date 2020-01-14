@@ -37,3 +37,17 @@ func TestOwins(t *testing.T) {
 		}
 	}
 }
+func TestDraw(t *testing.T) {
+	//Board DRAW
+	drawBoard := [9]string{"O", "X", "O", "X", "O", "X", "X", "O", "X"}
+	for i := range drawBoard {
+		cells[i].slogic = drawBoard[i]
+		moves++
+	}
+	checkWin()
+	if win[8] == true {
+		t.Logf("Draw : PASSED")
+	} else {
+		t.Error("Error: Draw failed")
+	}
+}
