@@ -6,17 +6,16 @@ import (
 	"time"
 )
 
-var grid [9]string
+var win [9]bool
 var wonChat string
 var x, gridSize, n, moves int
-var win, tp bool
+var tp, tuse bool
 
 func init() {
 	loadCells("(", ")")
-	win = false
 	wonChat = "N0 WINNER!"
+	moves = 0
 	rand.Seed(time.Now().UnixNano())
 	flag.BoolVar(&tp, "tp", false, "Two Player Enabled")
-	flag.Parse()
-	moves = 0
+
 }

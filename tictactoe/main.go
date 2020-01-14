@@ -1,17 +1,20 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 )
 
 func main() {
+
+	flag.Parse()
 	if tp == true {
-		for win == false {
+		for checkWin() == false {
 			printCells()
 			xmove()
 			checkWin()
 
-			if !win {
+			if checkWin() != false {
 				printCells()
 				twomove()
 				checkWin()
@@ -21,12 +24,12 @@ func main() {
 		fmt.Println(wonChat)
 
 	} else {
-		for win == false {
+		for checkWin() == false {
 
 			printCells()
 			xmove()
 			checkWin()
-			if !win {
+			if checkWin() == false {
 				aiOmove()
 				checkWin()
 			}
