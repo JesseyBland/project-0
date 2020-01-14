@@ -1,6 +1,9 @@
 package main
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 //TestXwins tests all X Cases of win conditions in my checkWin function
 func TestXwins(t *testing.T) {
@@ -50,4 +53,35 @@ func TestDraw(t *testing.T) {
 	} else {
 		t.Error("Error: Draw failed")
 	}
+}
+func ExampleTestXwins() {
+	drawBoard := [9]string{"X", "X", "O", "X", "X", "O", "O", "O", "X"}
+	for i := range drawBoard {
+		cells[i].slogic = drawBoard[i]
+		moves++
+	}
+
+	fmt.Println(checkWin())
+	//Output: true
+}
+func ExampleTestOwins() {
+	drawBoard := [9]string{"X", "O", "X", "X", "O", "O", "7", "O", "X"}
+	for i := range drawBoard {
+		cells[i].slogic = drawBoard[i]
+		moves++
+	}
+
+	fmt.Println(checkWin())
+	//Output: true
+}
+func ExampleTestDraw() {
+	drawBoard := [9]string{"O", "X", "O", "X", "O", "X", "X", "O", "X"}
+	for i := range drawBoard {
+		cells[i].slogic = drawBoard[i]
+		moves++
+	}
+
+	fmt.Println(checkWin())
+
+	// Output: true
 }
