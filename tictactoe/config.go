@@ -16,7 +16,8 @@ func init() {
 	wonChat = "N0 WINNER!"
 	moves = 0
 	rand.Seed(time.Now().UnixNano())
-	flag.Parse()
+
 	flag.BoolVar(&tp, "tp", false, "Two Player Enabled")
+	flag.Parse()
 
 }
