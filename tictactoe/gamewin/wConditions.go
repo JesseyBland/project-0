@@ -20,7 +20,6 @@ func init() {
 
 }
 func wConditions() {
-	WonChat = "No Winner!"
 
 	switch {
 
@@ -62,7 +61,9 @@ func wConditions() {
 
 	case gameboard.Board[6].Slogic == "X" && gameboard.Board[7].Slogic == "X" && gameboard.Board[8].Slogic == "X" && Win[7] == false:
 		WonChat = "X Wins!"
+
 		Win[7] = true
+
 	// O Win Conditions
 
 	case gameboard.Board[0].Slogic == "O" && gameboard.Board[1].Slogic == "O" && gameboard.Board[2].Slogic == "O" && Win[0] == false:
@@ -103,9 +104,10 @@ func wConditions() {
 	case gameboard.Board[6].Slogic == "O" && gameboard.Board[7].Slogic == "O" && gameboard.Board[8].Slogic == "O" && Win[7] == false:
 		WonChat = "O Wins!"
 		Win[7] = true
-
-	case Moves == 9:
+	case Moves == 9 && WonChat != "X Wins!":
+		WonChat = "No winners"
 		Win[8] = true
+
 	default:
 		break
 	}

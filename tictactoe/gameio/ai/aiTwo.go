@@ -4,15 +4,14 @@ import (
 	"fmt"
 
 	"github.com/JesseyBland/project-0/tictactoe/gameboard"
-	"github.com/JesseyBland/project-0/tictactoe/gameio"
 	"github.com/JesseyBland/project-0/tictactoe/gamewin"
 )
 
-//Aiplayer runs the game with ai controlling O.
-func Aiplayer() {
+//Aitwo runs the game with ai controlling both X and O.
+func Aitwo() {
 	for gamewin.CheckWin() == false {
 		gameboard.PrintBoard()
-		gameio.Xmove()
+		aiXmove()
 		gamewin.CheckWin()
 		if gamewin.CheckWin() == false {
 			gameboard.PrintBoard()
@@ -21,5 +20,6 @@ func Aiplayer() {
 		}
 	}
 	gameboard.PrintBoard()
+	fmt.Println("**************")
 	fmt.Println(gamewin.WonChat)
 }

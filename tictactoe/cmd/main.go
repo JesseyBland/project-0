@@ -6,10 +6,12 @@ import (
 )
 
 func main() {
-
-	if tp == true {
+	switch {
+	case tp == true:
 		two.Twoplayer()
-	} else {
+	case av == true:
+		ai.Aitwo()
+	default:
 		ai.Aiplayer()
 	}
 }
