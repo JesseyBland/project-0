@@ -25,7 +25,7 @@ func twomove() {
 
 		if goodInput == false {
 			fmt.Println("Error: The Number you entered has been chosen or you didn't enter a number.")
-			gameboard.PrintBoard()
+			fmt.Print(gameboard.PrintBoard())
 		}
 	}
 	gamewin.CheckWin()

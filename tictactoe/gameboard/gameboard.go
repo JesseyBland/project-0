@@ -8,10 +8,16 @@ import (
 	"strconv"
 )
 
-//Board is an Array of structured cells.
-var Board = [9]Cells{}
+//Board is a of structured cells.
+var Board = make([]Cells, boardsize)
+
+//Scale is the size of the row of the Board.
 var scale = 3
+
+//Boardsize is how many cells.
 var boardsize = scale * scale
+
+//row exsists to add a counter so that when it reaches scale it makes a new line for the next row.
 var row = 0
 
 //Cells the Cell structure of my board
@@ -38,17 +44,18 @@ func LoadCells(LGrid, RGrid string) {
 }
 
 //PrintBoard loops my board and prints the resulting cells.
-func PrintBoard() {
+func PrintBoard() string {
+	var sboard string
 	for i := 1; i < boardsize+1; i++ {
 
 		row++
 		if row == scale {
-			fmt.Printf("%v\n", Board[i-1])
+			sboard += fmt.Sprintf("%v\n", Board[i-1])
 			row = 0
 		} else {
-			fmt.Printf("%v", Board[i-1])
+			sboard += fmt.Sprintf("%v", Board[i-1])
 		}
 
 	}
-
+	return sboard
 }

@@ -10,16 +10,16 @@ import (
 //Aitwo runs the game with ai controlling both X and O.
 func Aitwo() {
 	for gamewin.CheckWin() == false {
-		gameboard.PrintBoard()
+		fmt.Print(gameboard.PrintBoard())
 		aiXmove()
 		gamewin.CheckWin()
 		if gamewin.CheckWin() == false {
-			gameboard.PrintBoard()
+			fmt.Print(gameboard.PrintBoard())
 			aiOmove()
 			gamewin.CheckWin()
 		}
 	}
-	gameboard.PrintBoard()
+	fmt.Print(gameboard.PrintBoard())
 	fmt.Println("**************")
 	fmt.Println(gamewin.WonChat)
 }

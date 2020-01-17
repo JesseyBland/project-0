@@ -44,7 +44,7 @@ func TestOwins(t *testing.T) {
 	}
 }
 func TestDraw(t *testing.T) {
-	//Board DRAW
+	//Win condition : DRAW
 	drawBoard := [9]string{"O", "X", "O", "X", "O", "X", "X", "O", "X"}
 	for i := range drawBoard {
 		gameboard.Board[i].Slogic = drawBoard[i]

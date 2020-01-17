@@ -13,16 +13,16 @@ import (
 // Twoplayer this is the twopalyer routine
 func Twoplayer() {
 	for gamewin.CheckWin() == false {
-		gameboard.PrintBoard()
+		fmt.Print(gameboard.PrintBoard())
 		gameio.Xmove()
 		gamewin.CheckWin()
 
 		if gamewin.CheckWin() == false {
-			gameboard.PrintBoard()
+			fmt.Print(gameboard.PrintBoard())
 			twomove()
 			gamewin.CheckWin()
 		}
 	}
-	gameboard.PrintBoard()
+	fmt.Print(gameboard.PrintBoard())
 	fmt.Println(gamewin.WonChat)
 }
