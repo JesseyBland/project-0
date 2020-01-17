@@ -10,7 +10,7 @@ import (
 var av, tp bool
 
 func init() {
-	gameboard.LoadCells("|", "|")
+	gameboard.LoadCells("[", "]")
 	flag.BoolVar(&tp, "tp", false, "Two Player Enabled")
 	flag.BoolVar(&av, "av", false, "Ai vs Ai Enable")
 	flag.Parse()

@@ -1,6 +1,6 @@
-// Package gameboard Creates a square Board filled with numbers 1 - 9 each number surrounded by a string.
-//looking at cell 1 of 9: {1} : This is a struct with elements that define the left side { the right side } and
-// the number 1, plus a bool variable saying if it is filled or empty.
+// Package gameboard Creates a square Board filled with numbers each number surrounded by a string.
+//Looking at cell 1 output: [|1 false|] : This is a struct with elements that define the left side | the right side | and
+// the number 1, plus a bool variable saying if it is filled or empty true or false.
 package gameboard
 
 import (
@@ -9,47 +9,54 @@ import (
 )
 
 //Board is a of structured cells.
-var Board = make([]Cells, boardsize)
+var Board = make([]Cell, 0)
 
-//Scale is the size of the row of the Board.
-var scale = 3
+//Scale is the size of Board. Supports up to up to 30 safely otherwise it breaks the design with cells wider than others
+//and extends past the termal width.
+var Scale int = 3
 
 //Boardsize is how many cells.
-var boardsize = scale * scale
+var boardsize int = Scale * Scale
 
 //row exsists to add a counter so that when it reaches scale it makes a new line for the next row.
 var row = 0
 
-//Cells the Cell structure of my board
-type Cells struct {
+//Cell the Cell structure of my board
+type Cell struct {
 	Slogic string
 	LGrid  string
 	RGrid  string
 	Fill   bool
 }
 
-func (p Cells) String() string {
-	return fmt.Sprintf("%v%v%v", p.LGrid, p.Slogic, p.RGrid)
+//This stringer will format for multiple scale levels. It should increase the cell size depending on the scale number of digits.
+func (p Cell) String() string {
+	switch {
+	case Scale >= 4 && Scale <= 9:
+		return fmt.Sprintf("%v%02v%v", p.LGrid, p.Slogic, p.RGrid)
+	case Scale >= 10 && Scale <= 100:
+		return fmt.Sprintf("%v%03v%v", p.LGrid, p.Slogic, p.RGrid)
+	default:
+		return fmt.Sprintf("%v%v%v", p.LGrid, p.Slogic, p.RGrid)
+	}
 }
 
 //LoadCells fills the Cells structs with the board values.
 func LoadCells(LGrid, RGrid string) {
-
 	for i := 0; i < boardsize; i++ {
-		offset := i + 1
-		Slogic := strconv.Itoa(offset)
 		Fill := false
-		Board[i] = Cells{Slogic, LGrid, RGrid, Fill}
+		val := Cell{strconv.Itoa(i + 1), LGrid, RGrid, Fill}
+		Board = append(Board, val)
 	}
 }
 
-//PrintBoard loops my board and prints the resulting cells.
+//PrintBoard loops my board and prints the resulting cells. It handles the new line by useing a row counter based on the scale.
 func PrintBoard() string {
 	var sboard string
 	for i := 1; i < boardsize+1; i++ {
 
 		row++
-		if row == scale {
+		if row == Scale {
 			sboard += fmt.Sprintf("%v\n", Board[i-1])
 			row = 0
 		} else {
