@@ -1,0 +1,29 @@
+xread := strings.Join(r.Form["quantity"], "")
+
+	x, _ := strconv.Atoi(xread)
+	goodInput := false
+	for goodInput == false {
+		duration := time.Duration(10) * time.Second
+		time.Sleep(duration)
+		for i := 0; i < len(gameboard.Board); i++ {
+			if x == (i+1) && gameboard.Board[i].Fill == false {
+				gameboard.Board[i].Slogic = "X"
+				gameboard.Board[i].Fill = true
+				gamewin.Moves++
+				goodInput = true
+				break
+			}
+		}
+
+		if goodInput == false {
+			fmt.Println("Error: The Number you entered has been chosen or you didn't enter a number.")
+			fmt.Print(gameboard.PrintBoard())
+		}
+	}
+	gamewin.CheckWin()
+	if gamewin.CheckWin() == false {
+		ai.AiOmove()
+		gamewin.CheckWin()
+	}
+	fmt.Print(gameboard.PrintBoard())
+	fmt.Println(gamewin.WonChat)

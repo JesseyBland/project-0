@@ -15,7 +15,7 @@ func Aitwo() {
 		gamewin.CheckWin()
 		if gamewin.CheckWin() == false {
 			fmt.Print(gameboard.PrintBoard())
-			aiOmove()
+			AiOmove()
 			gamewin.CheckWin()
 		}
 	}

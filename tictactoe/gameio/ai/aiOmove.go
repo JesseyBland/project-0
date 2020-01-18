@@ -10,7 +10,7 @@ import (
 	"github.com/JesseyBland/project-0/tictactoe/gamewin"
 )
 
-func aiOmove() {
+func AiOmove() {
 	checkRepeat := true
 	var n int
 	for checkRepeat == true {
