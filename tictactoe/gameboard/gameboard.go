@@ -50,6 +50,14 @@ func LoadCells(LGrid, RGrid string) {
 	}
 }
 
+//RestBoard Resets the board values to Cell number and Fill false.
+func ResetBoard() {
+	for i := 0; i < boardsize; i++ {
+		Board[i].Fill = false
+		Board[i].Slogic = strconv.Itoa(i + 1)
+	}
+}
+
 //PrintBoard loops my board and prints the resulting cells. It handles the new line by useing a row counter based on the scale.
 func PrintBoard() string {
 	var sboard string

@@ -12,6 +12,9 @@ import (
 
 // Twoplayer this is the twopalyer routine
 func Twoplayer() {
+Reset:
+	again := ""
+	gamewin.CheckWin()
 	for gamewin.CheckWin() == false {
 		fmt.Print(gameboard.PrintBoard())
 		gameio.Xmove()
@@ -25,4 +28,13 @@ func Twoplayer() {
 	}
 	fmt.Print(gameboard.PrintBoard())
 	fmt.Println(gamewin.WonChat)
+	fmt.Println("Play Again? y/n")
+
+	fmt.Scan(&again)
+	if again == "y" || again == "Y" || again == "Yes" || again == "yes" {
+
+		gamewin.ResetWin()
+		goto Reset
+
+	}
 }

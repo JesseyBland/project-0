@@ -5,8 +5,10 @@
     <body>
         <h1>Tic Tac Toe</h1>
         <p> {{if .Cwin}} 
-            
-            
+            <p>Do you want to Reset?</p>
+            <form action="/ttt1" method="POST">
+                <input type="text" name="name" placeholder="y/n"/>
+                <button type="submit">Go!</button>
             {{else}} 
             
             
