@@ -1,5 +1,5 @@
-// Package main is the Command Directory housing the main function and configuration variables.
-package main
+// Package tictactoe is the Command Directory housing the main function and configuration variables.
+package tictactoe
 
 import (
 	"flag"

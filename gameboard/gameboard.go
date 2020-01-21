@@ -50,7 +50,7 @@ func LoadCells(LGrid, RGrid string) {
 	}
 }
 
-//RestBoard Resets the board values to Cell number and Fill false.
+//ResetBoard Resets the board values to Cell number and Fill false.
 func ResetBoard() {
 	for i := 0; i < boardsize; i++ {
 		Board[i].Fill = false
