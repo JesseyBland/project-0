@@ -3,7 +3,7 @@
 package gamewin
 
 import (
-	"github.com/JesseyBland/project-0/tictactoe/gameboard"
+	"github.com/JesseyBland/project-0/gameboard"
 )
 
 //Win is an array that houses the win states.

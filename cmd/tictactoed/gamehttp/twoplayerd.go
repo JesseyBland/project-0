@@ -7,14 +7,18 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/JesseyBland/project-0/tictactoe/gameboard"
-	"github.com/JesseyBland/project-0/tictactoe/gamewin"
+	"github.com/JesseyBland/project-0/gameboard"
+	"github.com/JesseyBland/project-0/gamewin"
 )
 
-var Xm, Om int
+//Xm sets the X move number used in the logic for determining turn order
+var Xm int
+
+//Om sets the O move number used in the logic for determining turn order.
+var Om int
 
 //PlayervsPlayer is the two player option for my http tictactoe
-func PlayervsPlayer(w http.ResponseWriter, r *http.Request) {
+func playervsPlayer(w http.ResponseWriter, r *http.Request) {
 	//get request method
 
 	t, _ := template.ParseFiles("./web/ttt2.html")

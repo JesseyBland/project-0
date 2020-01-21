@@ -1,21 +1,28 @@
-package two
+// Package gameio contains all the files regaurding player input and ai output
+package gameio
 
 import (
 	"fmt"
+	"os"
+	"strings"
 
-	"github.com/JesseyBland/project-0/tictactoe/gameboard"
-	"github.com/JesseyBland/project-0/tictactoe/gamewin"
+	"github.com/JesseyBland/project-0/gameboard"
+	"github.com/JesseyBland/project-0/gamewin"
 )
 
-func twomove() {
+// Xmove is the X turn in the game.
+func Xmove() {
 	goodInput := false
 	x := 0
 	for goodInput == false {
-		fmt.Println("O's move pick 1-9")
-		fmt.Scanln(&x)
+		user := os.Getenv("USER")
+
+		fmt.Printf("%v's move pick 1-9\n", strings.Title(user))
+		fmt.Scan(&x)
+
 		for i := 0; i < len(gameboard.Board); i++ {
 			if x == (i+1) && gameboard.Board[i].Fill == false {
-				gameboard.Board[i].Slogic = "O"
+				gameboard.Board[i].Slogic = "X"
 				gameboard.Board[i].Fill = true
 				gamewin.Moves++
 				goodInput = true
@@ -28,5 +35,4 @@ func twomove() {
 			fmt.Print(gameboard.PrintBoard())
 		}
 	}
-	gamewin.CheckWin()
 }

@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/JesseyBland/project-0/tictactoe/gameboard"
+	"github.com/JesseyBland/project-0/gameboard"
 )
 
 //TestXwins tests all X Cases of win conditions in my CheckWin function

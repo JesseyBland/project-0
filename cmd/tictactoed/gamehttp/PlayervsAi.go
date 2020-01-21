@@ -7,14 +7,12 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/JesseyBland/project-0/tictactoe/gameboard"
-	"github.com/JesseyBland/project-0/tictactoe/gameio/ai"
-	"github.com/JesseyBland/project-0/tictactoe/gamewin"
+	"github.com/JesseyBland/project-0/gameboard"
+	"github.com/JesseyBland/project-0/gameio/ai"
+	"github.com/JesseyBland/project-0/gamewin"
 )
 
-//PlayervsAi
-func PlayervsAi(w http.ResponseWriter, r *http.Request) {
-	//get request method
+func playervsAi(w http.ResponseWriter, r *http.Request) {
 
 	t, _ := template.ParseFiles("./web/ttt1.html")
 
@@ -74,7 +72,6 @@ func PlayervsAi(w http.ResponseWriter, r *http.Request) {
 		if gamewin.CheckWin() == true && gamewin.WonChat != "O Wins!" {
 			fmt.Fprintf(w, "<br><p1>%v</p1>", gamewin.WonChat)
 			fmt.Println(gamewin.WonChat)
-			hboard(w, r)
 
 		} else if gamewin.CheckWin() == true && gamewin.WonChat == "O Wins!" {
 			fmt.Fprintf(w, "<br><p1>%v</p1>", gamewin.WonChat)

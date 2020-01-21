@@ -5,12 +5,12 @@ import (
 	"math/rand"
 	"time"
 
-	"github.com/JesseyBland/project-0/tictactoe/gameboard"
-	"github.com/JesseyBland/project-0/tictactoe/gamewin"
+	"github.com/JesseyBland/project-0/gameboard"
+	"github.com/JesseyBland/project-0/gamewin"
 )
 
-//aiXmove is the X turn in the game played by ai.
-func aiXmove() {
+//AiXmove is the X turn in the game played by ai.
+func AiXmove() {
 	checkRepeat := true
 	var x int
 	for checkRepeat == true {

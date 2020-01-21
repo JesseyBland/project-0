@@ -4,7 +4,7 @@ package main
 import (
 	"flag"
 
-	"github.com/JesseyBland/project-0/tictactoe/gameboard"
+	"github.com/JesseyBland/project-0/gameboard"
 )
 
 var av, tp bool

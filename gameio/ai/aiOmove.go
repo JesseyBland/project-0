@@ -6,10 +6,11 @@ import (
 	"math/rand"
 	"time"
 
-	"github.com/JesseyBland/project-0/tictactoe/gameboard"
-	"github.com/JesseyBland/project-0/tictactoe/gamewin"
+	"github.com/JesseyBland/project-0/gameboard"
+	"github.com/JesseyBland/project-0/gamewin"
 )
 
+// AiOmove is the O move in the Ai vs Ai.
 func AiOmove() {
 	checkRepeat := true
 	var n int

@@ -6,12 +6,12 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/JesseyBland/project-0/tictactoe/gamewin"
+	"github.com/JesseyBland/project-0/gamewin"
 
-	"github.com/JesseyBland/project-0/tictactoe/gameboard"
+	"github.com/JesseyBland/project-0/gameboard"
 )
 
-func Homepage(w http.ResponseWriter, r *http.Request) {
+func homepage(w http.ResponseWriter, r *http.Request) {
 	t, _ := template.ParseFiles("./web/index.html")
 	t.Execute(w, nil)
 	gameboard.LoadCells("[", "]")
@@ -36,9 +36,10 @@ func hboard(w http.ResponseWriter, r *http.Request) {
 func main() {
 	fmt.Println("Server Status:Listening Host:localhost Port:8080")
 
-	http.HandleFunc("/ttt", Homepage)
-	http.HandleFunc("/ttt1", PlayervsAi)
-	http.HandleFunc("/ttt2", PlayervsPlayer)
+	http.HandleFunc("/", homepage)
+	http.HandleFunc("/ttt1", playervsAi)
+	http.HandleFunc("/ttt2", playervsPlayer)
+	http.HandleFunc("/ttt3", aivsAi)
 
 	err := http.ListenAndServe(":8080", nil) // setting listening port
 	if err != nil {

@@ -1,29 +1,32 @@
-package ai
+// Package two houses the Two player option when -tp flag is used. X and O are user
+//inputs.
+package two
 
 import (
 	"fmt"
 
-	"github.com/JesseyBland/project-0/tictactoe/gameboard"
-	"github.com/JesseyBland/project-0/tictactoe/gamewin"
+	"github.com/JesseyBland/project-0/gameboard"
+	"github.com/JesseyBland/project-0/gameio"
+	"github.com/JesseyBland/project-0/gamewin"
 )
 
-//Aitwo runs the game with ai controlling both X and O.
-func Aitwo() {
+// Twoplayer this is the twopalyer routine
+func Twoplayer() {
 Reset:
 	again := ""
 	gamewin.CheckWin()
 	for gamewin.CheckWin() == false {
 		fmt.Print(gameboard.PrintBoard())
-		aiXmove()
+		gameio.Xmove()
 		gamewin.CheckWin()
+
 		if gamewin.CheckWin() == false {
 			fmt.Print(gameboard.PrintBoard())
-			AiOmove()
+			twomove()
 			gamewin.CheckWin()
 		}
 	}
 	fmt.Print(gameboard.PrintBoard())
-	fmt.Println("**************")
 	fmt.Println(gamewin.WonChat)
 	fmt.Println("Play Again? y/n")
 

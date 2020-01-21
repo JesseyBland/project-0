@@ -1,6 +1,6 @@
 package gamewin
 
-import "github.com/JesseyBland/project-0/tictactoe/gameboard"
+import "github.com/JesseyBland/project-0/gameboard"
 
 // ResetWin resets the win states.
 func ResetWin() {
