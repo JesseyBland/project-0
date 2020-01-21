@@ -36,9 +36,6 @@ func playervsAi(w http.ResponseWriter, r *http.Request) {
 	xread := strings.Join(r.Form["quantity"], "")
 	x, _ := strconv.Atoi(xread)
 
-	xm := 0
-	om := 0
-
 	if x == 0 && gameboard.Board[x].Fill == false {
 		hboard(w, r)
 
@@ -49,7 +46,7 @@ func playervsAi(w http.ResponseWriter, r *http.Request) {
 				gameboard.Board[i].Slogic = "X"
 				gameboard.Board[i].Fill = true
 				gamewin.Moves++
-				xm++
+				Xm++
 
 				fmt.Printf("X moves to %v\nTotal moves: %v\n", x, gamewin.Moves)
 				break
@@ -58,9 +55,9 @@ func playervsAi(w http.ResponseWriter, r *http.Request) {
 		}
 
 		gamewin.CheckWin()
-		if gamewin.CheckWin() == false && xm > om {
+		if gamewin.CheckWin() == false && Xm > Om {
 			ai.AiOmove()
-			om++
+			Om++
 			hboard(w, r)
 
 			gamewin.CheckWin()

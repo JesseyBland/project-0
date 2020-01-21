@@ -1,5 +1,5 @@
-// Package gameio contains all the files regaurding player input and ai output
-package gameio
+// Package player contains all the files regaurding player input vs ai output
+package player
 
 import (
 	"fmt"

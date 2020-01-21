@@ -1,5 +1,4 @@
-// Package tictactoe is the Command Directory housing the main function and configuration variables.
-package tictactoe
+package config
 
 import (
 	"flag"
@@ -7,12 +6,16 @@ import (
 	"github.com/JesseyBland/project-0/gameboard"
 )
 
-var av, tp bool
+//Av is the flag variable for AivsAi
+var Av bool
+
+//Tp is the flag variable for Two palyer
+var Tp bool
 
 func init() {
 	gameboard.LoadCells("[", "]")
-	flag.BoolVar(&tp, "tp", false, "Two Player Enabled")
-	flag.BoolVar(&av, "av", false, "Ai vs Ai Enable")
+	flag.BoolVar(&Tp, "tp", false, "Two Player Enabled")
+	flag.BoolVar(&Av, "av", false, "Ai vs Ai Enable")
 	flag.Parse()
 
 }

@@ -1,10 +1,10 @@
-package ai
+package player
 
 import (
 	"fmt"
 
 	"github.com/JesseyBland/project-0/gameboard"
-	"github.com/JesseyBland/project-0/gameio"
+	"github.com/JesseyBland/project-0/gameio/ai"
 	"github.com/JesseyBland/project-0/gamewin"
 )
 
@@ -15,11 +15,11 @@ Reset:
 	gamewin.CheckWin()
 	for gamewin.CheckWin() == false {
 		fmt.Print(gameboard.PrintBoard())
-		gameio.Xmove()
+		Xmove()
 		gamewin.CheckWin()
 		if gamewin.CheckWin() == false {
 			fmt.Print(gameboard.PrintBoard())
-			AiOmove()
+			ai.AiOmove()
 			gamewin.CheckWin()
 		}
 	}

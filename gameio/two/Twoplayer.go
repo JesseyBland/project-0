@@ -6,7 +6,7 @@ import (
 	"fmt"
 
 	"github.com/JesseyBland/project-0/gameboard"
-	"github.com/JesseyBland/project-0/gameio"
+	"github.com/JesseyBland/project-0/gameio/player"
 	"github.com/JesseyBland/project-0/gamewin"
 )
 
@@ -17,7 +17,7 @@ Reset:
 	gamewin.CheckWin()
 	for gamewin.CheckWin() == false {
 		fmt.Print(gameboard.PrintBoard())
-		gameio.Xmove()
+		player.Xmove()
 		gamewin.CheckWin()
 
 		if gamewin.CheckWin() == false {

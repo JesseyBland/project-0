@@ -1,18 +1,20 @@
-package tictactoe
+package main
 
 import (
+	"github.com/JesseyBland/project-0/cmd/tictactoe/config"
 	"github.com/JesseyBland/project-0/gameio/ai"
+	"github.com/JesseyBland/project-0/gameio/player"
 	"github.com/JesseyBland/project-0/gameio/two"
 )
 
 func main() {
 	switch {
-	case tp == true:
+	case config.Tp == true:
 		two.Twoplayer()
-	case av == true:
+	case config.Av == true:
 		ai.AivsAi()
 	default:
-		ai.Aiplayer()
+		player.Aiplayer()
 	}
 
 }

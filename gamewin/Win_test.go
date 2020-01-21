@@ -10,6 +10,7 @@ import (
 //TestXwins tests all X Cases of win conditions in my CheckWin function
 
 func TestXwins(t *testing.T) {
+	gameboard.LoadCells("[", "]")
 	for i := range gameboard.Board {
 		gameboard.Board[i].Slogic = "X"
 	}
@@ -28,6 +29,7 @@ func TestXwins(t *testing.T) {
 
 //TestOwins tests all O Cases of win conditions in my CheckWin and wCondtions function
 func TestOwins(t *testing.T) {
+	gameboard.LoadCells("[", "]")
 	for i := range gameboard.Board {
 		gameboard.Board[i].Slogic = "O"
 	}
@@ -45,6 +47,7 @@ func TestOwins(t *testing.T) {
 }
 func TestDraw(t *testing.T) {
 	//Win condition : DRAW
+	gameboard.LoadCells("[", "]")
 	drawBoard := [9]string{"O", "X", "O", "X", "O", "X", "X", "O", "X"}
 	for i := range drawBoard {
 		gameboard.Board[i].Slogic = drawBoard[i]
@@ -58,6 +61,7 @@ func TestDraw(t *testing.T) {
 	}
 }
 func ExampleTestXwins() {
+	gameboard.LoadCells("[", "]")
 	drawBoard := [9]string{"X", "X", "O", "X", "X", "O", "O", "O", "X"}
 	for i := range drawBoard {
 		gameboard.Board[i].Slogic = drawBoard[i]
@@ -68,6 +72,7 @@ func ExampleTestXwins() {
 	//Output: true
 }
 func ExampleTestOwins() {
+	gameboard.LoadCells("[", "]")
 	drawBoard := [9]string{"X", "O", "X", "X", "O", "O", "7", "O", "X"}
 	for i := range drawBoard {
 		gameboard.Board[i].Slogic = drawBoard[i]
@@ -78,6 +83,7 @@ func ExampleTestOwins() {
 	//Output: true
 }
 func ExampleTestDraw() {
+	gameboard.LoadCells("[", "]")
 	drawBoard := [9]string{"O", "X", "O", "X", "O", "X", "X", "O", "X"}
 	for i := range drawBoard {
 		gameboard.Board[i].Slogic = drawBoard[i]

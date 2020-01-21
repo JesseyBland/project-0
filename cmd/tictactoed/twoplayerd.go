@@ -49,6 +49,7 @@ func playervsPlayer(w http.ResponseWriter, r *http.Request) {
 		xturn(w, r)
 		hboard(w, r)
 	}
+
 WC:
 	if gamewin.CheckWin() == false {
 
