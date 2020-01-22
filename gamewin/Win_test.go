@@ -48,9 +48,11 @@ func TestOwins(t *testing.T) {
 func TestDraw(t *testing.T) {
 	//Win condition : DRAW
 	gameboard.LoadCells("[", "]")
-	drawBoard := [9]string{"O", "X", "O", "X", "O", "X", "X", "O", "X"}
-	for i := range drawBoard {
-		gameboard.Board[i].Slogic = drawBoard[i]
+	ResetWin()
+	Moves = 0
+
+	for i := 0; i < 9; i++ {
+
 		Moves++
 	}
 	CheckWin()

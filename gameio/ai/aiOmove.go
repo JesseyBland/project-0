@@ -10,7 +10,7 @@ import (
 	"github.com/JesseyBland/project-0/gamewin"
 )
 
-// AiOmove is the O move in the Ai vs Ai.
+//AiOmove is the O move in the Ai vs Ai.
 func AiOmove() {
 	checkRepeat := true
 	var n int

@@ -4,24 +4,34 @@ package player
 import (
 	"fmt"
 	"os"
+	"runtime"
 	"strings"
 
 	"github.com/JesseyBland/project-0/gameboard"
 	"github.com/JesseyBland/project-0/gamewin"
 )
 
+//X is x input
+var X int
+
 // Xmove is the X turn in the game.
 func Xmove() {
 	goodInput := false
-	x := 0
+
 	for goodInput == false {
-		user := os.Getenv("USER")
+
+		var user string
+		if runtime.GOOS == "windows" {
+			user = os.Getenv("USERNAME")
+		} else {
+			user = os.Getenv("USER")
+		}
 
 		fmt.Printf("%v's move pick 1-9\n", strings.Title(user))
-		fmt.Scan(&x)
+		fmt.Scan(&X)
 
 		for i := 0; i < len(gameboard.Board); i++ {
-			if x == (i+1) && gameboard.Board[i].Fill == false {
+			if X == (i+1) && gameboard.Board[i].Fill == false {
 				gameboard.Board[i].Slogic = "X"
 				gameboard.Board[i].Fill = true
 				gamewin.Moves++

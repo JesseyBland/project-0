@@ -10,8 +10,12 @@ import (
 	"github.com/JesseyBland/project-0/gamewin"
 )
 
+func init() {
+	gameboard.LoadCells("[", "]")
+}
+
 func homepage(w http.ResponseWriter, r *http.Request) {
-	t, _ := template.ParseFiles("./web/index.html")
+	t, _ := template.ParseFiles("./cmd/tictactoed/web/index.html")
 	t.Execute(w, nil)
 	gameboard.LoadCells("[", "]")
 	gamewin.ResetWin()
@@ -20,7 +24,7 @@ func homepage(w http.ResponseWriter, r *http.Request) {
 
 }
 func index(w http.ResponseWriter, r *http.Request) {
-	t, _ := template.ParseFiles("./web/index.html")
+	t, _ := template.ParseFiles("./cmd/tictactoed/web/index.html")
 	t.Execute(w, nil)
 
 }

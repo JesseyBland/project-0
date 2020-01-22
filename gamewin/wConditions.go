@@ -15,10 +15,6 @@ var WonChat string
 //Moves is a int that tracks number of X and O moves.
 var Moves int
 
-func init() {
-	Moves = 0
-
-}
 func wConditions() {
 
 	switch {
