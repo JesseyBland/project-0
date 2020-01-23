@@ -11,6 +11,7 @@ import (
 
 func TestXwins(t *testing.T) {
 	gameboard.LoadCells("[", "]")
+	ResetWin()
 	for i := range gameboard.Board {
 		gameboard.Board[i].Slogic = "X"
 	}
@@ -30,6 +31,7 @@ func TestXwins(t *testing.T) {
 //TestOwins tests all O Cases of win conditions in my CheckWin and wCondtions function
 func TestOwins(t *testing.T) {
 	gameboard.LoadCells("[", "]")
+	ResetWin()
 	for i := range gameboard.Board {
 		gameboard.Board[i].Slogic = "O"
 	}
