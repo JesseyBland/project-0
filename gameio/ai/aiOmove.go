@@ -28,7 +28,7 @@ func AiOmove() {
 					gameboard.Board[i].Fill = true
 					gamewin.Moves++
 					checkRepeat = false
-					fmt.Printf("O moves to %v\nTotal moves: %v\n", n, gamewin.Moves)
+					fmt.Printf("O moves to %v\nTotal moves: %v\n", n+1, gamewin.Moves)
 				}
 			}
 		}
