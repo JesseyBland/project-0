@@ -11,13 +11,6 @@ import (
 //Board is a of structured cells.
 var Board = make([]Cell, 0)
 
-//Scale is the size of Board. Supports up to up to 30 safely otherwise it breaks the design with cells wider than others
-//and extends past the termal width.
-var Scale int = 3
-
-//Boardsize is how many cells.
-var boardsize int = Scale * Scale
-
 //row exsists to add a counter so that when it reaches scale it makes a new line for the next row.
 var row = 0
 
@@ -43,7 +36,7 @@ func (p Cell) String() string {
 
 //LoadCells fills the Cells structs with the board values.
 func LoadCells(LGrid, RGrid string) {
-	for i := 0; i < boardsize; i++ {
+	for i := 0; i < (Scale * Scale); i++ {
 		Fill := false
 		val := Cell{strconv.Itoa(i + 1), LGrid, RGrid, Fill}
 		Board = append(Board, val)
@@ -52,7 +45,7 @@ func LoadCells(LGrid, RGrid string) {
 
 //ResetBoard Resets the board values to Cell number and Fill false.
 func ResetBoard() {
-	for i := 0; i < boardsize; i++ {
+	for i := 0; i < (Scale * Scale); i++ {
 		Board[i].Fill = false
 		Board[i].Slogic = strconv.Itoa(i + 1)
 	}
@@ -61,7 +54,7 @@ func ResetBoard() {
 //PrintBoard loops my board and prints the resulting cells. It handles the new line by useing a row counter based on the scale.
 func PrintBoard() string {
 	var sboard string
-	for i := 1; i < boardsize+1; i++ {
+	for i := 1; i < (Scale*Scale)+1; i++ {
 
 		row++
 		if row == Scale {
