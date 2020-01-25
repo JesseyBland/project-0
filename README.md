@@ -41,6 +41,9 @@ Two Player mode
 **-av**
 Ai vs Ai mode
 
+**-g1,g2,g3,g4,g5,g6**
+Board design options 7 counting the default.
+
 Example:
 ```bash
 $user/go/src/JesseyBland/project-0
@@ -74,6 +77,6 @@ Once the server has started, navigate in your browser to URL localhost:8080
 - [x] User can play against AI
 - [x] 2 player flag option
 - [x] Respond to username
-- [x] Add http browser play 
-- [ ] Add cosmetic options 
-- [ ] Add app store for in app purchases
+- [x] Add http browser play
+- [x] Cosmetic options
+- [ ] Add Reverse Proxy to http server
