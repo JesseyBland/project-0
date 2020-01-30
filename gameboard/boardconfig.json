@@ -1,4 +1,4 @@
 {
-    "Grid": "/home/jessey/go/src/github.com/JesseyBland/project-0/gameboard/gridconfig.txt",
-    "Scalenumber": "/home/jessey/go/src/github.com/JesseyBland/project-0/gameboard/scaleconfig.txt" 
+    "Grid": "./gameboard/gridconfig.txt",
+    "Scalenumber": "./gameboard/scaleconfig.txt" 
 }

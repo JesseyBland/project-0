@@ -42,14 +42,14 @@ func hboard(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	fmt.Println("Server Status:Listening Host:localhost Port:8080")
+	fmt.Println("Server Status:Listening Host:localhost Port:9999")
 	http.HandleFunc("/", index)
 	http.HandleFunc("/ttt", homepage)
 	http.HandleFunc("/ttt1", playervsAi)
 	http.HandleFunc("/ttt2", playervsPlayer)
 	http.HandleFunc("/ttt3", aivsAi)
 
-	err := http.ListenAndServe(":8080", nil) // setting listening port
+	err := http.ListenAndServe(":9999", nil) // setting listening port
 	if err != nil {
 		log.Fatal("ListenAndServe: ", err)
 	}

@@ -47,35 +47,37 @@ func init() {
 }
 
 func assignGrid() (a, b string) {
+	var lg string
+	var rg string
 	switch {
 	case G1 == true:
-		gameboard.LG = gameboard.Grids[2]
-		gameboard.RG = gameboard.Grids[3]
-		return gameboard.LG, gameboard.RG
+		lg = gameboard.Grids[2]
+		rg = gameboard.Grids[3]
+		return lg, rg
 	case G2 == true:
-		gameboard.LG = gameboard.Grids[4]
-		gameboard.RG = gameboard.Grids[5]
-		return gameboard.LG, gameboard.RG
+		lg = gameboard.Grids[4]
+		rg = gameboard.Grids[5]
+		return lg, rg
 	case G3 == true:
-		gameboard.LG = gameboard.Grids[6]
-		gameboard.RG = gameboard.Grids[7]
-		return gameboard.LG, gameboard.RG
+		lg = gameboard.Grids[6]
+		rg = gameboard.Grids[7]
+		return lg, rg
 	case G4 == true:
-		gameboard.LG = gameboard.Grids[8]
-		gameboard.RG = gameboard.Grids[9]
-		return gameboard.LG, gameboard.RG
+		lg = gameboard.Grids[8]
+		rg = gameboard.Grids[9]
+		return lg, rg
 	case G5 == true:
-		gameboard.LG = gameboard.Grids[10]
-		gameboard.RG = gameboard.Grids[11]
-		return gameboard.LG, gameboard.RG
+		lg = gameboard.Grids[10]
+		rg = gameboard.Grids[11]
+		return lg, rg
 	case G6 == true:
-		gameboard.LG = gameboard.Grids[12]
-		gameboard.RG = gameboard.Grids[13]
-		return gameboard.LG, gameboard.RG
+		lg = gameboard.Grids[12]
+		rg = gameboard.Grids[13]
+		return lg, rg
 	default:
-		gameboard.LG = gameboard.Grids[0]
-		gameboard.RG = gameboard.Grids[1]
-		return gameboard.LG, gameboard.RG
+		lg = gameboard.Grids[0]
+		rg = gameboard.Grids[1]
+		return lg, rg
 	}
 
 }

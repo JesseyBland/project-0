@@ -11,11 +11,9 @@ import (
 var Grids []string
 
 var Scale int
-var LG string
-var RG string
 
 //CONFIGFILE json file used to encode my text files into my project
-const CONFIGFILE string = "/home/jessey/go/src/github.com/JesseyBland/project-0/gameboard/boardconfig.json"
+const CONFIGFILE string = "./gameboard/boardconfig.json"
 
 //Configuration struct that pulls my json files.
 type Configuration struct {
