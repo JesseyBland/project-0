@@ -11,7 +11,7 @@ import (
 //Aiplayer runs the game with ai controlling O.
 func Aiplayer() {
 Reset:
-	again := ""
+	var again string
 	gamewin.CheckWin()
 	for gamewin.CheckWin() == false {
 		fmt.Print(gameboard.PrintBoard())

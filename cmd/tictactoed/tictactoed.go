@@ -49,7 +49,7 @@ func main() {
 	http.HandleFunc("/ttt2", playervsPlayer)
 	http.HandleFunc("/ttt3", aivsAi)
 
-	err := http.ListenAndServe(":9999", nil) // setting listening port
+	err := http.ListenAndServe(":8888", nil) // setting listening port
 	if err != nil {
 		log.Fatal("ListenAndServe: ", err)
 	}
