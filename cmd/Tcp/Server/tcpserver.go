@@ -1,8 +1,9 @@
 package main
 
-import "net"
-
-import "fmt"
+import (
+	"fmt"
+	"net"
+)
 
 var ConnSignal chan string = make(chan string)
 var connections []net.Conn
@@ -30,7 +31,6 @@ func Session(ln net.Listener) {
 
 			c.Write(buf)
 		}
-		//fmt.Println(string(buf))
 
 	}
 }
