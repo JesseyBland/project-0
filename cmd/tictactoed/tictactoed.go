@@ -49,11 +49,9 @@ func main() {
 	http.HandleFunc("/ttt2", playervsPlayer)
 	http.HandleFunc("/ttt3", aivsAi)
 
-<<<<<<< HEAD
-	err := http.ListenAndServe("ec2-18-217-209-106.us-east-2.compute.amazonaws.com:8888", nil) // setting listening port
-=======
+
+// 	err := http.ListenAndServe("ec2-18-217-209-106.us-east-2.compute.amazonaws.com:8888", nil) // setting listening port
 	err := http.ListenAndServe(":7777", nil) // setting listening port
->>>>>>> 8ec95de07685fccea3ac6dc15a6d586e7fff2aaa
 	if err != nil {
 		log.Fatal("ListenAndServe: ", err)
 	}
